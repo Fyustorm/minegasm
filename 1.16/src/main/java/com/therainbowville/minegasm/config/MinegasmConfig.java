@@ -27,16 +27,4 @@ public class MinegasmConfig {
     // Server
     // -- none at the moment
 
-    @SubscribeEvent
-    public static void onModConfigEvent(final ModConfig.ModConfigEvent event) {
-        final ModConfig config = event.getConfig();
-        // Re-bake the configs when they change
-        if (config.getSpec() == ConfigHolder.CLIENT_SPEC) {
-            ConfigHelper.bakeClient();
-            LOGGER.debug("Baked client config");
-        } else if (config.getSpec() == ConfigHolder.SERVER_SPEC) {
-            ConfigHelper.bakeServer();
-            LOGGER.debug("Baked server config");
-        }
-    }
 }
